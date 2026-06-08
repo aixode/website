@@ -434,20 +434,96 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
 .hero-inner>*:nth-child(5){animation-delay:0.32s;}
 .phones-section{animation:fadeUp 0.7s ease 0.4s both;}
 
+.nav-hamburger{
+  display:none;flex-direction:column;gap:5px;cursor:pointer;
+  padding:8px;border-radius:8px;background:transparent;border:none;
+}
+.nav-hamburger span{
+  display:block;width:22px;height:2px;background:#fff;
+  border-radius:2px;transition:all 0.3s;
+}
+.mobile-menu{
+  display:none;position:fixed;top:68px;left:0;right:0;
+  background:rgba(13,15,20,0.98);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);z-index:199;
+  padding:16px 20px 24px;flex-direction:column;gap:4px;
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{
+  color:rgba(255,255,255,0.8);text-decoration:none;font-size:16px;
+  font-weight:400;font-family:'Roboto',sans-serif;padding:14px 16px;
+  border-radius:10px;transition:all 0.2s;cursor:pointer;
+  border-bottom:1px solid var(--border);
+}
+.mobile-menu a:last-of-type{border-bottom:none;}
+.mobile-menu-cta{
+  margin-top:12px;background:var(--orange-acc);color:#fff;border:none;
+  padding:14px;border-radius:100px;font-size:15px;font-weight:700;
+  cursor:pointer;font-family:'Roboto',sans-serif;width:100%;
+}
 @media(max-width:900px){
-  nav{padding:0 20px;}.nav-links{display:none;}
-  .hero{padding:120px 24px 80px;}
-  .phones-section{padding:0 24px 80px;}
-  .phones-wrap{height:420px;}
-  .phone-main{width:200px;height:420px;}
-  .phone-left,.phone-right{width:170px;height:360px;}
-  .proof-strip,.features-section,.how-section,.mission-strip,.pricing-section,.signup-section,.testimonials-section{padding:72px 24px;}
-  .features-grid,.how-grid,.mission-cards,.team-grid,.pricing-grid,.contact-grid,.support-grid,.analysis-grid,.values-grid,.testimonials-grid{grid-template-columns:1fr;}
-  .footer-top{grid-template-columns:1fr 1fr;}
-  .inner-hero,.mission-content,.about-content,.support-content,.pricing-inner,.privacy-content,.features-inner,.how-inner{padding:60px 24px 80px;}
-  .story-block{padding:36px 24px;}
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .nav-cta{display:none;}
+  .nav-hamburger{display:flex;}
+  .hero{grid-template-columns:1fr;padding:100px 20px 48px;gap:36px;text-align:center;min-height:auto;}
+  .hero-eyebrow{margin:0 auto 24px;}
+  .hero-desc{margin:0 auto 32px;}
+  .hero-actions{justify-content:center;}
+  .hero-trust{justify-content:center;}
+  .phones-section{padding:0 20px 60px;}
+  .phones-wrap{width:100%;max-width:340px;height:380px;margin:0 auto;}
+  .phone-main{width:180px;height:370px;}
+  .phone-left{width:150px;height:310px;left:-5px;}
+  .phone-right{width:150px;height:310px;right:-5px;}
+  .proof-strip{padding:32px 20px;}
+  .proof-strip-inner{display:grid;grid-template-columns:1fr 1fr;gap:20px;justify-items:center;}
+  .proof-div{display:none;}
+  .proof-num{font-size:28px;}
+  .testimonials-section,.features-section,.how-section,.mission-strip,.pricing-section,.signup-section{padding:60px 20px;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .t-card{grid-column:span 1 !important;}
+  .testimonials-header{flex-direction:column;gap:12px;}
+  .features-grid{grid-template-columns:1fr;}
+  .feature-card{padding:32px 24px;}
+  .how-grid{grid-template-columns:1fr;gap:40px;}
+  .how-visual{padding:24px;}
+  .mission-strip h2{font-size:clamp(26px,8vw,44px);letter-spacing:-1px;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .pricing-card.featured{order:-1;}
+  .signup-title{font-size:clamp(32px,10vw,52px);letter-spacing:-2px;}
+  .signup-form-wrap{padding:28px 20px;}
   .form-row{grid-template-columns:1fr;}
-  .testimonials-header{flex-direction:column;}
+  .inner-hero{padding:100px 20px 48px;text-align:center;}
+  .inner-hero-inner{max-width:100%;}
+  .inner-hero p{margin:0 auto;}
+  .inner-hero .label{justify-content:center;}
+  .inner-hero h1{font-size:clamp(36px,10vw,60px);letter-spacing:-2px;}
+  .mission-content,.about-content,.support-content,.pricing-inner,.privacy-content{padding:48px 20px 80px;}
+  .mission-cards{grid-template-columns:1fr;}
+  .mission-card{padding:32px 24px;}
+  .values-grid{grid-template-columns:1fr 1fr;}
+  .analysis-grid{grid-template-columns:1fr;}
+  .story-block{padding:36px 24px;}
+  .team-grid{grid-template-columns:1fr 1fr !important;max-width:100% !important;}
+  .support-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .features-inner,.how-inner{padding:60px 20px 80px;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:28px;}
+  footer{padding:48px 20px 32px;}
+  .footer-bottom{flex-direction:column;text-align:center;gap:12px;}
+  .section-title{font-size:clamp(26px,7vw,44px);}
+}
+@media(max-width:480px){
+  .values-grid{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:1fr !important;}
+  .hero-title{font-size:clamp(38px,12vw,56px);}
+  .phones-wrap{max-width:280px;height:320px;}
+  .phone-main{width:150px;height:310px;}
+  .phone-left{width:125px;height:260px;}
+  .phone-right{width:125px;height:260px;}
+  .footer-top{grid-template-columns:1fr;}
+  .proof-strip-inner{grid-template-columns:1fr 1fr;}
 }
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
@@ -964,11 +1040,30 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
 </div>
 
 <script>
+function toggleMobileMenu(){
+  const menu=document.getElementById('mobile-menu');
+  const btn=document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  const o=menu.classList.contains('open');
+  btn.children[0].style.transform=o?'rotate(45deg) translate(5px,5px)':'';
+  btn.children[1].style.opacity=o?'0':'1';
+  btn.children[2].style.transform=o?'rotate(-45deg) translate(5px,-5px)':'';
+}
+function closeMobileMenu(){
+  const menu=document.getElementById('mobile-menu');
+  const btn=document.getElementById('hamburger');
+  if(!menu||!btn)return;
+  menu.classList.remove('open');
+  btn.children[0].style.transform='';
+  btn.children[1].style.opacity='1';
+  btn.children[2].style.transform='';
+}
 function showPage(name){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+name).classList.add('active');
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.page===name));
   window.scrollTo({top:0,behavior:'smooth'});
+  closeMobileMenu();
   setTimeout(initReveal,120);
 }
 function toggleFaq(el){el.classList.toggle('open');}
