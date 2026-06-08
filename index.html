@@ -539,6 +539,21 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 <script>var TallyConfig={"hideFooter":true};</script>
 <script async src="https://tally.so/widgets/embed.js"></script>
+
+<style id="tally-branding-hide">
+/* Make Tally branding invisible — same color as form background */
+.Tally__popup a[href*="tally.so"],
+.tally-branding,
+[class*="PoweredBy"],
+[class*="powered-by"],
+[class*="BrandingFooter"],
+[class*="branding"],
+a[href="https://tally.so"] {
+  color: #0d0f14 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+</style>
 </head>
 <body>
 
@@ -685,7 +700,19 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
   <div class="proof-strip-inner">
     <div class="proof-stat"><span class="proof-num" style="font-size:22px;letter-spacing:-0.5px;">Limited</span><span class="proof-lbl">beta spots available</span></div>
     <div class="proof-div"></div>
-    <div class="proof-stat"><span class="proof-num">4–5★</span><span class="proof-lbl">Beta tester ratings</span></div>
+    <div class="proof-stat">
+      <span class="proof-num" style="display:flex;align-items:center;gap:6px;font-size:28px;">
+        4.8
+        <span style="display:inline-flex;align-items:center;gap:1px;font-size:16px;">
+          <span style="color:var(--orange-acc);">★</span>
+          <span style="color:var(--orange-acc);">★</span>
+          <span style="color:var(--orange-acc);">★</span>
+          <span style="color:var(--orange-acc);">★</span>
+          <span style="position:relative;display:inline-block;color:rgba(255,107,43,0.2);"><span style="position:absolute;left:0;top:0;width:80%;overflow:hidden;color:var(--orange-acc);">★</span>★</span>
+        </span>
+      </span>
+      <span class="proof-lbl">Beta tester ratings</span>
+    </div>
     <div class="proof-div"></div>
     <div class="proof-stat"><span class="proof-num">20+ yrs</span><span class="proof-lbl">of our lives on screens</span></div>
     <div class="proof-div"></div>
