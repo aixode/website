@@ -317,7 +317,7 @@ h1,h2,h3{font-family:'Figtree',sans-serif;}
 .signup-title .accent{color:var(--orange-acc);}
 .signup-sub{color:var(--text-muted);font-size:17px;font-weight:300;line-height:1.7;margin-bottom:44px;}
 .signup-form-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px;text-align:left;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
 .form-input{background:rgba(255,255,255,0.05);border:1px solid var(--border2);color:#fff;padding:13px 16px;border-radius:12px;font-size:15px;font-family:'Roboto',sans-serif;font-weight:300;outline:none;transition:border-color 0.2s;width:100%;}
 .form-input::placeholder{color:var(--text-dim);}
 .form-input:focus{border-color:var(--orange-acc) !important;box-shadow:0 0 0 3px rgba(255,107,43,0.22) !important;outline:none !important;}
@@ -496,7 +496,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
   /* pricing order handled by HTML */
   .signup-title{font-size:clamp(32px,10vw,52px);letter-spacing:-2px;}
   .signup-form-wrap{padding:28px 20px;}
-  .form-row{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;gap:0;}
   .inner-hero{padding:100px 20px 48px;text-align:center;}
   .inner-hero-inner{max-width:100%;}
   .inner-hero p{margin:0 auto;}
@@ -841,24 +841,29 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <h2 class="signup-title">Ready to live<br><span class="accent">more?</span></h2>
     <p class="signup-sub">Be among the first to test Aixode. It takes 30 seconds — and it's completely free.</p>
     <div class="signup-form-wrap">
+      <!-- Row 1: First name + Last name -->
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">First name <span class="req">*</span></label>
-          <input class="form-input" type="text" id="sf-first" placeholder="Criyonit" required>
+          <input class="form-input" type="text" id="sf-first" required>
         </div>
         <div class="form-group">
           <label class="form-label">Last name <span class="req">*</span></label>
-          <input class="form-input" type="text" id="sf-last" placeholder="Kayoka" required>
+          <input class="form-input" type="text" id="sf-last" required>
         </div>
       </div>
-      <div class="form-group">
-        <label class="form-label">Email address <span class="req">*</span></label>
-        <input class="form-input" type="email" id="sf-email" placeholder="you@example.com" required>
+      <!-- Row 2: Email + Phone -->
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email address <span class="req">*</span></label>
+          <input class="form-input" type="email" id="sf-email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone number</label>
+          <input class="form-input" type="tel" id="sf-phone">
+        </div>
       </div>
-      <div class="form-group">
-        <label class="form-label">Phone number</label>
-        <input class="form-input" type="tel" id="sf-phone" placeholder="+47 000 00 000">
-      </div>
+      <!-- Row 3: Platform -->
       <div class="form-group">
         <label class="form-label">Platform <span class="req">*</span></label>
         <div class="platform-select" id="sf-platform">
@@ -872,6 +877,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
           </button>
         </div>
       </div>
+      <!-- Submit -->
       <button class="form-submit" onclick="submitSignup(this)" id="sf-submit">
         Register now for early access &rarr;
       </button>
@@ -1060,8 +1066,8 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <div class="contact-form-card">
       <h3>Send us a message</h3><p>We typically reply within 24 hours on weekdays.</p>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><input class="form-input" type="text" placeholder="First name"><input class="form-input" type="text" placeholder="Last name"></div>
-        <input class="form-input" type="email" placeholder="Email address">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><input class="form-input" type="text"><input class="form-input" type="text"></div>
+        <input class="form-input" type="email">
         <select class="form-input"><option value="">Select a topic</option><option>General question</option><option>Bug report</option><option>Feature request</option><option>Privacy / data</option><option>Billing</option><option>Other</option></select>
         <textarea class="form-input" rows="4" placeholder="Your message..." style="resize:vertical;"></textarea>
         <button class="form-submit">Send message &rarr;</button>
