@@ -45,7 +45,7 @@ nav{
 .nav-links{display:flex;gap:4px;list-style:none;align-items:center;}
 .nav-links a{color:var(--text-muted);text-decoration:none;font-size:14px;font-weight:400;font-family:'Roboto',sans-serif;padding:8px 14px;border-radius:8px;transition:all 0.2s;cursor:pointer;white-space:nowrap;}
 .nav-links a:hover,.nav-links a.active{color:#fff;background:var(--surface2);}
-.nav-cta{background:var(--orange-acc);color:#fff;border:none;padding:10px 22px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.2s;flex-shrink:0;white-space:nowrap;}
+.nav-cta{background:var(--orange-acc);color:#fff;border:none;padding:10px 22px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.2s;flex-shrink:0;white-space:nowrap;}
 .nav-cta:hover{box-shadow:0 4px 20px rgba(255,107,43,0.35);transform:translateY(-1px);}
 
 /* SHARED */
@@ -54,7 +54,7 @@ nav{
 h1,h2,h3{font-family:'Figtree',sans-serif;}
 .section-title{font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-1.5px;line-height:1.05;color:#fff;}
 .section-sub{color:var(--text-muted);font-size:17px;font-weight:300;line-height:1.75;}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--orange-acc);color:#fff;border:none;padding:15px 28px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.22s;box-shadow:var(--shadow-orange-acc);}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--orange-acc);color:#fff;border:none;padding:15px 28px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.22s;box-shadow:var(--shadow-orange-acc);}
 .btn-primary:hover{box-shadow:0 12px 40px rgba(255,107,43,0.32);transform:translateY(-2px);}
 .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,0.75);border:1px solid var(--border2);padding:14px 28px;border-radius:100px;font-size:15px;font-weight:400;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.2s;}
 .btn-secondary:hover{border-color:var(--orange-acc);color:var(--orange-acc);background:var(--orange-acc-dim);}
@@ -304,7 +304,7 @@ h1,h2,h3{font-family:'Figtree',sans-serif;}
 .plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-muted);line-height:1.4;}
 .chk{width:17px;height:17px;border-radius:50%;background:var(--orange-acc-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:10px;color:var(--orange-acc);border:1px solid rgba(255,107,43,0.12);}
 .chk-no{width:17px;height:17px;border-radius:50%;background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:11px;color:var(--text-dim);}
-.plan-btn{width:100%;padding:13px;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.2s;border:none;}
+.plan-btn{width:100%;padding:13px;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.2s;border:none;}
 .plan-btn.outline{background:transparent;color:rgba(255,255,255,0.7);border:1px solid var(--border2);}
 .plan-btn.outline:hover{border-color:var(--orange-acc);color:var(--orange-acc);background:var(--orange-acc-dim);}
 .plan-btn.filled{background:var(--orange-acc);color:#fff;box-shadow:var(--shadow-orange-acc);}
@@ -320,7 +320,8 @@ h1,h2,h3{font-family:'Figtree',sans-serif;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
 .form-input{background:rgba(255,255,255,0.05);border:1px solid var(--border2);color:#fff;padding:13px 16px;border-radius:12px;font-size:15px;font-family:'Roboto',sans-serif;font-weight:300;outline:none;transition:border-color 0.2s;width:100%;}
 .form-input::placeholder{color:var(--text-dim);}
-.form-input:focus{border-color:var(--orange-acc);box-shadow:0 0 0 3px rgba(255,107,43,0.07);}
+.form-input:focus{border-color:var(--orange-acc);box-shadow:0 0 0 3px rgba(255,107,43,0.18);}
+.form-input:focus,.contact-form-card input:focus,.contact-form-card select:focus,.contact-form-card textarea:focus{border-color:var(--orange-acc) !important;box-shadow:0 0 0 3px rgba(255,107,43,0.18) !important;outline:none !important;}
 .form-input option{background:var(--bg3);}
 .platform-select{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
 .platform-btn{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text-muted);padding:12px;border-radius:12px;font-size:14px;font-family:'Roboto',sans-serif;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;}
@@ -455,13 +456,16 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
   border-radius:10px;transition:all 0.2s;cursor:pointer;
   border-bottom:1px solid var(--border);
 }
+.mobile-menu a.active{color:#fff;background:var(--surface2);font-weight:500;}
 .mobile-menu a:last-of-type{border-bottom:none;}
 .mobile-menu-cta{
   margin-top:12px;background:var(--orange-acc);color:#fff;border:none;
-  padding:14px;border-radius:100px;font-size:15px;font-weight:700;
+  padding:14px;border-radius:12px;font-size:15px;font-weight:700;
   cursor:pointer;font-family:'Roboto',sans-serif;width:100%;
 }
 @media(max-width:900px){
+  .pricing-section .pricing-grid{grid-template-columns:1fr !important;}
+  .home-pricing-mini{grid-template-columns:repeat(3,1fr) !important;}
   nav{padding:0 20px;}
   .nav-links{display:none;}
   .nav-cta{display:none;}
@@ -490,7 +494,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
   .how-visual{padding:24px;}
   .mission-strip h2{font-size:clamp(26px,8vw,44px);letter-spacing:-1px;}
   .pricing-grid{grid-template-columns:1fr;}
-  .pricing-card.featured{order:-1;}
+  /* pricing order handled by HTML */
   .signup-title{font-size:clamp(32px,10vw,52px);letter-spacing:-2px;}
   .signup-form-wrap{padding:28px 20px;}
   .form-row{grid-template-columns:1fr;}
@@ -572,11 +576,11 @@ a[href="https://tally.so"] {
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a onclick="showPage('home');closeMobileMenu()">Home</a>
-  <a onclick="showPage('mission');closeMobileMenu()">Mission &amp; Vision</a>
-  <a onclick="showPage('about');closeMobileMenu()">About</a>
-  <a onclick="showPage('pricing');closeMobileMenu()">Pricing</a>
-  <a onclick="showPage('support');closeMobileMenu()">Support</a>
+  <a onclick="showPage('home');closeMobileMenu()" data-page="home">Home</a>
+  <a onclick="showPage('mission');closeMobileMenu()" data-page="mission">Mission &amp; Vision</a>
+  <a onclick="showPage('about');closeMobileMenu()" data-page="about">About</a>
+  <a onclick="showPage('pricing');closeMobileMenu()" data-page="pricing">Pricing</a>
+  <a onclick="showPage('support');closeMobileMenu()" data-page="support">Support</a>
   <button class="mobile-menu-cta" data-tally-open="Gxbb5L" data-tally-overlay="1" onclick="closeMobileMenu()">Get early access — free</button>
 </div>
 
@@ -1100,6 +1104,10 @@ a[href="https://tally.so"] {
 </div>
 
 <script>
+function selectPlatform(btn){
+  btn.closest('.platform-select').querySelectorAll('.platform-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
 function toggleMobileMenu(){
   const menu=document.getElementById('mobile-menu');
   const btn=document.getElementById('hamburger');
@@ -1118,12 +1126,18 @@ function closeMobileMenu(){
   btn.children[1].style.opacity='1';
   btn.children[2].style.transform='';
 }
+function updateMobileActiveNav(name){
+  document.querySelectorAll('.mobile-menu a').forEach(a=>{
+    a.classList.toggle('active', a.getAttribute('data-page')===name);
+  });
+}
 function showPage(name){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+name).classList.add('active');
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.page===name));
   window.scrollTo({top:0,behavior:'smooth'});
   closeMobileMenu();
+  updateMobileActiveNav(name);
   setTimeout(initReveal,120);
 }
 function toggleFaq(el){el.classList.toggle('open');}
