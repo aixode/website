@@ -540,23 +540,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
 }
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-<script>var TallyConfig={"hideFooter":true};</script>
-<script async src="https://tally.so/widgets/embed.js"></script>
 
-<style id="tally-branding-hide">
-/* Make Tally branding invisible — same color as form background */
-.Tally__popup a[href*="tally.so"],
-.tally-branding,
-[class*="PoweredBy"],
-[class*="powered-by"],
-[class*="BrandingFooter"],
-[class*="branding"],
-a[href="https://tally.so"] {
-  color: #0d0f14 !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-</style>
 </head>
 <body>
 
@@ -569,7 +553,7 @@ a[href="https://tally.so"] {
     <li><a onclick="showPage('pricing')" data-page="pricing">Pricing</a></li>
     <li><a onclick="showPage('support')" data-page="support">Support</a></li>
   </ul>
-  <button class="nav-cta" data-tally-open="Gxbb5L" data-tally-overlay="1">Get Early Access</button>
+  <button class="nav-cta" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Get Early Access</button>
   <button class="nav-hamburger" onclick="toggleMobileMenu()" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -580,7 +564,7 @@ a[href="https://tally.so"] {
   <a onclick="showPage('about');closeMobileMenu()" data-page="about">About</a>
   <a onclick="showPage('pricing');closeMobileMenu()" data-page="pricing">Pricing</a>
   <a onclick="showPage('support');closeMobileMenu()" data-page="support">Support</a>
-  <button class="mobile-menu-cta" data-tally-open="Gxbb5L" data-tally-overlay="1" onclick="closeMobileMenu()">Get early access — free</button>
+  <button class="mobile-menu-cta" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'});closeMobileMenu()">Get early access — free</button>
 </div>
 
 <!-- ═══════════════ HOME ═══════════════ -->
@@ -594,8 +578,8 @@ a[href="https://tally.so"] {
     <h1 class="hero-title">Screen less.<br><span class="accent">Live more.</span></h1>
     <p class="hero-desc">Aixode helps you and your loved ones break unhealthy phone habits, sleep better, and focus on what truly matters.</p>
     <div class="hero-actions">
-      <button class="btn-primary" data-tally-open="Gxbb5L" data-tally-overlay="1">Get early access — free</button>
-      <button class="btn-secondary" data-tally-open="Gxbb5L" data-tally-overlay="1"><i class="ph ph-bell-ringing"></i> Notify me at launch</button>
+      <button class="btn-primary" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Get early access — free</button>
+      <button class="btn-secondary" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})"><i class="ph ph-bell-ringing"></i> Notify me at launch</button>
     </div>
     <div class="hero-trust">
       <div class="trust-item"><span class="trust-icon"><i class="ph ph-apple-logo"></i> iOS</div>
@@ -856,14 +840,46 @@ a[href="https://tally.so"] {
     <div class="label" style="justify-content:center;"><span class="label-dot"></span>Early access</div>
     <h2 class="signup-title">Ready to live<br><span class="accent">more?</span></h2>
     <p class="signup-sub">Be among the first to test Aixode. It takes 30 seconds — and it's completely free.</p>
-    <div style="margin-top:32px;text-align:center;">
-      <button class="form-submit"
-        data-tally-open="Gxbb5L"
-        data-tally-overlay="1"
-        style="max-width:340px;margin:0 auto;display:block;padding:18px 32px;font-size:16px;">
+    <div class="signup-form-wrap">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First name <span class="req">*</span></label>
+          <input class="form-input" type="text" id="sf-first" placeholder="Criyonit" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last name <span class="req">*</span></label>
+          <input class="form-input" type="text" id="sf-last" placeholder="Kayoka" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email address <span class="req">*</span></label>
+        <input class="form-input" type="email" id="sf-email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone number</label>
+        <input class="form-input" type="tel" id="sf-phone" placeholder="+47 000 00 000">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Platform <span class="req">*</span></label>
+        <div class="platform-select" id="sf-platform">
+          <button type="button" class="platform-btn" onclick="selectPlatform(this)" data-value="iPhone (iOS)">
+            <span class="check-icon"></span>
+            <i class="ph ph-apple-logo"></i> iPhone (iOS)
+          </button>
+          <button type="button" class="platform-btn" onclick="selectPlatform(this)" data-value="Android">
+            <span class="check-icon"></span>
+            <i class="ph ph-android-logo"></i> Android
+          </button>
+        </div>
+      </div>
+      <button class="form-submit" onclick="submitSignup(this)" id="sf-submit">
         Register now for early access &rarr;
       </button>
-      <p class="form-note" style="margin-top:16px;">By signing up you agree to our <a onclick="showPage('privacy')" style="color:var(--orange-acc);cursor:pointer;">Privacy Policy</a>. No spam, ever.</p>
+      <div id="sf-success" style="display:none;text-align:center;padding:20px;color:var(--orange-acc);font-weight:600;font-size:16px;">
+        <i class="ph ph-check-circle" style="font-size:24px;margin-bottom:8px;display:block;"></i>
+        You're on the list! We'll be in touch soon.
+      </div>
+      <p class="form-note">By signing up you agree to our <a onclick="showPage('privacy')" style="color:var(--orange-acc);cursor:pointer;">Privacy Policy</a>. No spam, ever.</p>
     </div>
   </div>
 </section>
@@ -871,7 +887,7 @@ a[href="https://tally.so"] {
 <footer>
   <div class="footer-top">
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
-    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a data-tally-open="Gxbb5L" data-tally-overlay="1" style="cursor:pointer;">Get early access</a></li></ul></div>
+    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
     <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
@@ -903,7 +919,7 @@ a[href="https://tally.so"] {
 <footer>
   <div class="footer-top">
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
-    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a data-tally-open="Gxbb5L" data-tally-overlay="1" style="cursor:pointer;">Get early access</a></li></ul></div>
+    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
     <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
@@ -960,7 +976,7 @@ a[href="https://tally.so"] {
 <footer>
   <div class="footer-top">
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
-    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a data-tally-open="Gxbb5L" data-tally-overlay="1" style="cursor:pointer;">Get early access</a></li></ul></div>
+    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
     <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
@@ -1005,13 +1021,13 @@ a[href="https://tally.so"] {
       </div>
     </div>
 
-    <p style="text-align:center;color:var(--text-dim);font-size:14px;font-weight:300;padding-bottom:40px;">Want to be notified when pricing is announced? <a data-tally-open="Gxbb5L" data-tally-overlay="1" style="color:var(--orange-acc);cursor:pointer;text-decoration:none;">Register your spot now &rarr;</a></p>
+    <p style="text-align:center;color:var(--text-dim);font-size:14px;font-weight:300;padding-bottom:40px;">Want to be notified when pricing is announced? <a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="color:var(--orange-acc);cursor:pointer;text-decoration:none;">Register your spot now &rarr;</a></p>
   </div>
 </section>
 <footer>
   <div class="footer-top">
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
-    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a data-tally-open="Gxbb5L" data-tally-overlay="1" style="cursor:pointer;">Get early access</a></li></ul></div>
+    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
     <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
@@ -1067,7 +1083,7 @@ a[href="https://tally.so"] {
 <footer>
   <div class="footer-top">
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
-    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a data-tally-open="Gxbb5L" data-tally-overlay="1" style="cursor:pointer;">Get early access</a></li></ul></div>
+    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
     <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
@@ -1093,7 +1109,7 @@ a[href="https://tally.so"] {
 <footer>
   <div class="footer-top">
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
-    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a data-tally-open="Gxbb5L" data-tally-overlay="1" style="cursor:pointer;">Get early access</a></li></ul></div>
+    <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
     <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
@@ -1102,6 +1118,50 @@ a[href="https://tally.so"] {
 </div>
 
 <script>
+async function submitSignup(btn){
+  const first = document.getElementById('sf-first').value.trim();
+  const last = document.getElementById('sf-last').value.trim();
+  const email = document.getElementById('sf-email').value.trim();
+  const phone = document.getElementById('sf-phone').value.trim();
+  const platformBtn = document.querySelector('#sf-platform .platform-btn.active');
+  const platform = platformBtn ? platformBtn.getAttribute('data-value') : '';
+
+  if(!first){alert('Please enter your first name.');return;}
+  if(!last){alert('Please enter your last name.');return;}
+  if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
+  if(!platform){alert('Please select your platform.');return;}
+
+  btn.disabled=true;
+  btn.textContent='Sending...';
+
+  try{
+    const res = await fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        access_key:'3a33ce93-956e-490a-9c5a-7e6b16235c78',
+        subject:'New Aixode Early Access Registration',
+        from_name:'Aixode Website',
+        name: first+' '+last,
+        email: email,
+        phone: phone||'Not provided',
+        platform: platform,
+        message:'New registration from aixode.com'
+      })
+    });
+    const data = await res.json();
+    if(data.success){
+      document.querySelector('.signup-form-wrap').style.display='none';
+      document.getElementById('sf-success').style.display='block';
+    } else {
+      throw new Error('Failed');
+    }
+  } catch(e){
+    btn.disabled=false;
+    btn.textContent='Register now for early access →';
+    alert('Something went wrong. Please try again or email us at contact@aixode.com');
+  }
+}
 function selectPlatform(btn){
   btn.closest('.platform-select').querySelectorAll('.platform-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
