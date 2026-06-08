@@ -525,13 +525,23 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
   .footer-top{grid-template-columns:1fr;}
   .proof-strip-inner{grid-template-columns:1fr 1fr;}
 }
+
+.stars-half{display:inline-flex;align-items:center;gap:1px;font-size:13px;}
+.stars-half .s-full{color:var(--orange-acc);}
+.stars-half .s-half{
+  position:relative;display:inline-block;color:rgba(255,255,255,0.2);
+}
+.stars-half .s-half::before{
+  content:"★";position:absolute;left:0;top:0;
+  width:50%;overflow:hidden;color:var(--orange-acc);
+}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo" onclick="showPage('home')">Aixode</span>
+  <span class="nav-logo" onclick="showPage('home');closeMobileMenu()">Aixode</span>
   <ul class="nav-links">
     <li><a onclick="showPage('home')" data-page="home">Home</a></li>
     <li><a onclick="showPage('mission')" data-page="mission">Mission &amp; Vision</a></li>
@@ -540,7 +550,18 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <li><a onclick="showPage('support')" data-page="support">Support</a></li>
   </ul>
   <button class="nav-cta" onclick="showPage('home');setTimeout(()=>document.getElementById('signup').scrollIntoView({behavior:'smooth'}),80)">Get Early Access</button>
+  <button class="nav-hamburger" onclick="toggleMobileMenu()" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a onclick="showPage('home');closeMobileMenu()">Home</a>
+  <a onclick="showPage('mission');closeMobileMenu()">Mission &amp; Vision</a>
+  <a onclick="showPage('about');closeMobileMenu()">About</a>
+  <a onclick="showPage('pricing');closeMobileMenu()">Pricing</a>
+  <a onclick="showPage('support');closeMobileMenu()">Support</a>
+  <button class="mobile-menu-cta" onclick="showPage('home');setTimeout(()=>document.getElementById('signup').scrollIntoView({behavior:'smooth'}),80);closeMobileMenu()">Get early access — free</button>
+</div>
 
 <!-- ═══════════════ HOME ═══════════════ -->
 <div class="page active" id="page-home">
@@ -682,12 +703,12 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
         <div class="t-author"><div class="t-avatar">S</div><div><div class="t-name">Sara S.</div><div class="t-role">Parent of two · Family user</div></div></div>
       </div>
       <div class="t-card">
-        <div class="t-stars"><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span></div>
+        <div class="t-stars"><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star" style="position:relative;color:rgba(255,107,43,0.25);"><span style="position:absolute;left:0;top:0;width:50%;overflow:hidden;color:var(--orange-acc);">★</span>★</span></div>
         <p class="t-quote">"The weekly graph overview is the most useful part. I finally have a real picture of how I spend my time across the entire week."</p>
         <div class="t-author"><div class="t-avatar">A</div><div><div class="t-name">Beta tester</div><div class="t-role">Used several times a week</div></div></div>
       </div>
       <div class="t-card" style="grid-column:span 2;">
-        <div class="t-stars"><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span></div>
+        <div class="t-stars"><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star" style="color:rgba(255,255,255,0.2);">★</span></div>
         <p class="t-quote">"The app helped me see my screen use clearly for the first time — especially useful before bedtime. It gave me better balance in my day."</p>
         <div class="t-author"><div class="t-avatar">M</div><div><div class="t-name">Maria B.</div><div class="t-role">Beta tester · Rated 4/5 for ease of use</div></div></div>
       </div>
