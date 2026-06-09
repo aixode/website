@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-Fine-tune logo dot position to top:1px<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0d0f14;
@@ -559,7 +559,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <li><a onclick="showPage('pricing')" data-page="pricing">Pricing</a></li>
     <li><a onclick="showPage('support')" data-page="support">Support</a></li>
   </ul>
-  <button class="nav-cta" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Get Early Access</button>
+  <button class="nav-cta" onclick="showPage('home');setTimeout(()=>document.getElementById('signup').scrollIntoView({behavior:'smooth'}),120)">Get Early Access</button>
   <button class="nav-hamburger" onclick="toggleMobileMenu()" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -1219,7 +1219,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     </div>
 
     <!-- What's included teaser -->
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;">
+    <div class="pricing-grid reveal" style="margin-bottom:40px;">
       <div class="pricing-card" style="text-align:center;padding:40px 28px;">
         <div style="font-size:32px;margin-bottom:16px;"><i class="ph ph-gift" style="font-size:32px;color:var(--orange-acc);"></i></div>
         <div class="plan-name" style="margin-top:0;">Free</div>
@@ -1240,7 +1240,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
       </div>
     </div>
 
-    <p style="text-align:center;color:var(--text-dim);font-size:14px;font-weight:300;padding-bottom:40px;">Want to be notified when pricing is announced? <a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="color:var(--orange-acc);cursor:pointer;text-decoration:none;">Register your spot now &rarr;</a></p>
+    <p style="text-align:center;color:var(--text-dim);font-size:14px;font-weight:300;padding-bottom:40px;">Want to be notified when pricing is announced? <a onclick="showPage('home');setTimeout(()=>document.getElementById('signup').scrollIntoView({behavior:'smooth'}),120)" style="color:var(--orange-acc);cursor:pointer;text-decoration:none;">Register your spot now &rarr;</a></p>
   </div>
 </section>
 <footer>
@@ -1312,7 +1312,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
 <!-- ═══════════════ PRIVACY ═══════════════ -->
 <div class="page" id="page-privacy">
 <section class="inner-hero"><div class="inner-hero-inner"><div class="label"><span class="label-dot"></span>Legal</div><h1>Privacy<br><span>Policy.</span></h1><p>We believe in full transparency about how we handle your personal data.</p></div></section>
-<div class="privacy-content reveal">
+<section class="inner-hero" style="text-align:center;"><div class="inner-hero-inner" style="max-width:100%;"><div class="label" style="justify-content:center;"><span class="label-dot"></span>Legal</div><h1>Privacy<br><span>Policy.</span></h1></div></section><div class="privacy-content reveal">
   <span class="privacy-updated">Last updated: 29 January 2026</span>
   <h2>1. Introduction</h2><p>This Privacy Policy explains how Aixode AS processes personal data when you visit our website or sign up for early access to the Aixode app.</p>
   <h2>2. Data Controller</h2><p>Aixode AS &middot; Org.nr.: 936 051 901 &middot; Email: <a href="mailto:contact@aixode.com" style="color:var(--orange-acc);">contact@aixode.com</a></p>
