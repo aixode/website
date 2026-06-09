@@ -45,7 +45,7 @@ nav{
 .nav-links{display:flex;gap:4px;list-style:none;align-items:center;}
 .nav-links a{color:var(--text-muted);text-decoration:none;font-size:14px;font-weight:400;font-family:'Roboto',sans-serif;padding:8px 14px;border-radius:8px;transition:all 0.2s;cursor:pointer;white-space:nowrap;}
 .nav-links a:hover,.nav-links a.active{color:#fff;background:var(--surface2);}
-.nav-cta{background:var(--orange-acc);color:#fff;border:none;padding:10px 22px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.2s;flex-shrink:0;white-space:nowrap;}
+.nav-cta{background:var(--orange-acc);color:#000;border:none;padding:10px 22px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.2s;flex-shrink:0;white-space:nowrap;}
 .nav-cta:hover{box-shadow:0 4px 20px rgba(255,107,43,0.35);transform:translateY(-1px);}
 
 /* SHARED */
@@ -54,7 +54,7 @@ nav{
 h1,h2,h3{font-family:'Figtree',sans-serif;}
 .section-title{font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-1.5px;line-height:1.05;color:#fff;}
 .section-sub{color:var(--text-muted);font-size:17px;font-weight:300;line-height:1.75;}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--orange-acc);color:#fff;border:none;padding:15px 28px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.22s;box-shadow:var(--shadow-orange-acc);}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--orange-acc);color:#000;border:none;padding:15px 28px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.22s;box-shadow:var(--shadow-orange-acc);}
 .btn-primary:hover{box-shadow:0 12px 40px rgba(255,107,43,0.32);transform:translateY(-2px);}
 .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,0.75);border:1px solid var(--border2);padding:14px 28px;border-radius:12px;font-size:15px;font-weight:400;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.2s;}
 .btn-secondary:hover{border-color:var(--orange-acc);color:var(--orange-acc);background:var(--orange-acc-dim);}
@@ -307,7 +307,7 @@ h1,h2,h3{font-family:'Figtree',sans-serif;}
 .plan-btn{width:100%;padding:13px;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Roboto',sans-serif;transition:all 0.2s;border:none;}
 .plan-btn.outline{background:transparent;color:rgba(255,255,255,0.7);border:1px solid var(--border2);}
 .plan-btn.outline:hover{border-color:var(--orange-acc);color:var(--orange-acc);background:var(--orange-acc-dim);}
-.plan-btn.filled{background:var(--orange-acc);color:#fff;box-shadow:var(--shadow-orange-acc);}
+.plan-btn.filled{background:var(--orange-acc);color:#000;box-shadow:var(--shadow-orange-acc);}
 .plan-btn.filled:hover{box-shadow:0 8px 30px rgba(255,107,43,0.32);}
 
 /* SIGNUP */
@@ -334,7 +334,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange-acc) !importan
 .platform-btn .check-icon{width:18px;height:18px;border-radius:4px;border:2px solid var(--border2);display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s;flex-shrink:0;background:transparent;}
 .platform-btn.active .check-icon{background:var(--orange-acc);border-color:var(--orange-acc);}
 .platform-btn.active .check-icon::after{content:'✓';font-size:11px;color:#fff;font-weight:700;line-height:1;}
-.form-submit{width:100%;padding:15px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Roboto',sans-serif;background:var(--orange-acc);color:#fff;border:none;box-shadow:var(--shadow-orange-acc);transition:all 0.22s;margin-top:12px;}
+.form-submit{width:100%;padding:15px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Roboto',sans-serif;background:var(--orange-acc);color:#000;border:none;box-shadow:var(--shadow-orange-acc);transition:all 0.22s;margin-top:12px;}
 .form-submit:hover{box-shadow:0 8px 32px rgba(255,107,43,0.32);transform:translateY(-1px);}
 .form-note{font-size:12px;color:var(--text-dim);margin-top:14px;line-height:1.6;}
 .form-note a{color:var(--orange-acc);text-decoration:none;cursor:pointer;}
@@ -467,7 +467,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
 .mobile-menu a.active{color:#fff;background:var(--surface2);font-weight:500;}
 .mobile-menu a:last-of-type{border-bottom:none;}
 .mobile-menu-cta{
-  margin-top:12px;background:var(--orange-acc);color:#fff;border:none;
+  margin-top:12px;background:var(--orange-acc);color:#000;border:none;
   padding:14px;border-radius:12px;font-size:15px;font-weight:700;
   cursor:pointer;font-family:'Roboto',sans-serif;width:100%;
 }
@@ -870,28 +870,210 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
           <label class="form-label">Phone number</label>
           <div style="display:flex;gap:8px;">
             <select class="form-input" id="sf-cc" style="width:72px;flex-shrink:0;cursor:pointer;padding-left:8px;padding-right:4px;">
-              <option value="+47">+47</option>
-              <option value="+1">+1</option>
-              <option value="+44">+44</option>
-              <option value="+46">+46</option>
-              <option value="+45">+45</option>
-              <option value="+358">+358</option>
-              <option value="+49">+49</option>
-              <option value="+33">+33</option>
-              <option value="+31">+31</option>
-              <option value="+34">+34</option>
-              <option value="+39">+39</option>
-              <option value="+41">+41</option>
-              <option value="+43">+43</option>
-              <option value="+48">+48</option>
-              <option value="+55">+55</option>
-              <option value="+27">+27</option>
-              <option value="+234">+234</option>
-              <option value="+254">+254</option>
-              <option value="+91">+91</option>
-              <option value="+86">+86</option>
-              <option value="+61">+61</option>
-            </select>
+            <option value="+1">+1</option>
+            <option value="+7">+7</option>
+            <option value="+20">+20</option>
+            <option value="+27">+27</option>
+            <option value="+30">+30</option>
+            <option value="+31">+31</option>
+            <option value="+32">+32</option>
+            <option value="+33">+33</option>
+            <option value="+34">+34</option>
+            <option value="+36">+36</option>
+            <option value="+39">+39</option>
+            <option value="+40">+40</option>
+            <option value="+41">+41</option>
+            <option value="+43">+43</option>
+            <option value="+44">+44</option>
+            <option value="+45">+45</option>
+            <option value="+46">+46</option>
+            <option value="+47" selected>+47</option>
+            <option value="+48">+48</option>
+            <option value="+49">+49</option>
+            <option value="+51">+51</option>
+            <option value="+52">+52</option>
+            <option value="+54">+54</option>
+            <option value="+55">+55</option>
+            <option value="+56">+56</option>
+            <option value="+57">+57</option>
+            <option value="+58">+58</option>
+            <option value="+60">+60</option>
+            <option value="+61">+61</option>
+            <option value="+62">+62</option>
+            <option value="+63">+63</option>
+            <option value="+64">+64</option>
+            <option value="+65">+65</option>
+            <option value="+66">+66</option>
+            <option value="+81">+81</option>
+            <option value="+82">+82</option>
+            <option value="+84">+84</option>
+            <option value="+86">+86</option>
+            <option value="+90">+90</option>
+            <option value="+91">+91</option>
+            <option value="+92">+92</option>
+            <option value="+93">+93</option>
+            <option value="+94">+94</option>
+            <option value="+95">+95</option>
+            <option value="+98">+98</option>
+            <option value="+212">+212</option>
+            <option value="+213">+213</option>
+            <option value="+216">+216</option>
+            <option value="+218">+218</option>
+            <option value="+220">+220</option>
+            <option value="+221">+221</option>
+            <option value="+222">+222</option>
+            <option value="+223">+223</option>
+            <option value="+224">+224</option>
+            <option value="+225">+225</option>
+            <option value="+226">+226</option>
+            <option value="+227">+227</option>
+            <option value="+228">+228</option>
+            <option value="+229">+229</option>
+            <option value="+230">+230</option>
+            <option value="+231">+231</option>
+            <option value="+232">+232</option>
+            <option value="+233">+233</option>
+            <option value="+234">+234</option>
+            <option value="+235">+235</option>
+            <option value="+236">+236</option>
+            <option value="+237">+237</option>
+            <option value="+238">+238</option>
+            <option value="+239">+239</option>
+            <option value="+240">+240</option>
+            <option value="+241">+241</option>
+            <option value="+242">+242</option>
+            <option value="+243">+243</option>
+            <option value="+244">+244</option>
+            <option value="+245">+245</option>
+            <option value="+246">+246</option>
+            <option value="+247">+247</option>
+            <option value="+248">+248</option>
+            <option value="+249">+249</option>
+            <option value="+250">+250</option>
+            <option value="+251">+251</option>
+            <option value="+252">+252</option>
+            <option value="+253">+253</option>
+            <option value="+254">+254</option>
+            <option value="+255">+255</option>
+            <option value="+256">+256</option>
+            <option value="+257">+257</option>
+            <option value="+258">+258</option>
+            <option value="+260">+260</option>
+            <option value="+261">+261</option>
+            <option value="+262">+262</option>
+            <option value="+263">+263</option>
+            <option value="+264">+264</option>
+            <option value="+265">+265</option>
+            <option value="+266">+266</option>
+            <option value="+267">+267</option>
+            <option value="+268">+268</option>
+            <option value="+269">+269</option>
+            <option value="+290">+290</option>
+            <option value="+291">+291</option>
+            <option value="+297">+297</option>
+            <option value="+298">+298</option>
+            <option value="+299">+299</option>
+            <option value="+350">+350</option>
+            <option value="+351">+351</option>
+            <option value="+352">+352</option>
+            <option value="+353">+353</option>
+            <option value="+354">+354</option>
+            <option value="+355">+355</option>
+            <option value="+356">+356</option>
+            <option value="+357">+357</option>
+            <option value="+358">+358</option>
+            <option value="+359">+359</option>
+            <option value="+370">+370</option>
+            <option value="+371">+371</option>
+            <option value="+372">+372</option>
+            <option value="+373">+373</option>
+            <option value="+374">+374</option>
+            <option value="+375">+375</option>
+            <option value="+376">+376</option>
+            <option value="+377">+377</option>
+            <option value="+378">+378</option>
+            <option value="+380">+380</option>
+            <option value="+381">+381</option>
+            <option value="+382">+382</option>
+            <option value="+385">+385</option>
+            <option value="+386">+386</option>
+            <option value="+387">+387</option>
+            <option value="+389">+389</option>
+            <option value="+420">+420</option>
+            <option value="+421">+421</option>
+            <option value="+423">+423</option>
+            <option value="+500">+500</option>
+            <option value="+501">+501</option>
+            <option value="+502">+502</option>
+            <option value="+503">+503</option>
+            <option value="+504">+504</option>
+            <option value="+505">+505</option>
+            <option value="+506">+506</option>
+            <option value="+507">+507</option>
+            <option value="+508">+508</option>
+            <option value="+509">+509</option>
+            <option value="+590">+590</option>
+            <option value="+591">+591</option>
+            <option value="+592">+592</option>
+            <option value="+593">+593</option>
+            <option value="+594">+594</option>
+            <option value="+595">+595</option>
+            <option value="+596">+596</option>
+            <option value="+597">+597</option>
+            <option value="+598">+598</option>
+            <option value="+599">+599</option>
+            <option value="+670">+670</option>
+            <option value="+672">+672</option>
+            <option value="+673">+673</option>
+            <option value="+674">+674</option>
+            <option value="+675">+675</option>
+            <option value="+676">+676</option>
+            <option value="+677">+677</option>
+            <option value="+678">+678</option>
+            <option value="+679">+679</option>
+            <option value="+680">+680</option>
+            <option value="+681">+681</option>
+            <option value="+682">+682</option>
+            <option value="+683">+683</option>
+            <option value="+685">+685</option>
+            <option value="+686">+686</option>
+            <option value="+687">+687</option>
+            <option value="+688">+688</option>
+            <option value="+689">+689</option>
+            <option value="+690">+690</option>
+            <option value="+691">+691</option>
+            <option value="+692">+692</option>
+            <option value="+850">+850</option>
+            <option value="+852">+852</option>
+            <option value="+853">+853</option>
+            <option value="+855">+855</option>
+            <option value="+856">+856</option>
+            <option value="+880">+880</option>
+            <option value="+886">+886</option>
+            <option value="+960">+960</option>
+            <option value="+961">+961</option>
+            <option value="+962">+962</option>
+            <option value="+963">+963</option>
+            <option value="+964">+964</option>
+            <option value="+965">+965</option>
+            <option value="+966">+966</option>
+            <option value="+967">+967</option>
+            <option value="+968">+968</option>
+            <option value="+970">+970</option>
+            <option value="+971">+971</option>
+            <option value="+972">+972</option>
+            <option value="+973">+973</option>
+            <option value="+974">+974</option>
+            <option value="+975">+975</option>
+            <option value="+976">+976</option>
+            <option value="+977">+977</option>
+            <option value="+992">+992</option>
+            <option value="+993">+993</option>
+            <option value="+994">+994</option>
+            <option value="+995">+995</option>
+            <option value="+996">+996</option>
+            <option value="+998">+998</option>
+          </select>
             <input class="form-input" type="tel" id="sf-phone" style="flex:1;">
           </div>
         </div>
@@ -1108,9 +1290,8 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     </div>
     <div class="contact-aside">
       <div class="contact-aside-card"><div class="ci-icon"><i class="ph ph-envelope" style="font-size:20px;color:var(--orange-acc);"></i></div><div class="ci-title">Email</div><div class="ci-val"><a href="mailto:contact@aixode.com">contact@aixode.com</a></div></div>
-      <div class="contact-aside-card"><div class="ci-icon"><i class="ph ph-phone" style="font-size:20px;color:var(--orange-acc);"></i></div><div class="ci-title">Phone</div><div class="ci-val"></div></div>
       <div class="contact-aside-card"><div class="ci-icon"><i class="ph ph-linkedin-logo" style="font-size:20px;color:var(--orange-acc);"></i></div><div class="ci-title">LinkedIn</div><div class="ci-val"><a href="https://www.linkedin.com/company/aixode" target="_blank">linkedin.com/company/aixode</a></div></div>
-      <div class="contact-aside-card">
+      <div class="contact-aside-card" style="flex:1;">
         <div id="feedback-section"></div><div class="ci-icon"><i class="ph ph-heart" style="font-size:20px;color:var(--orange-acc);"></i></div><div class="ci-title">Share feedback</div>
         <div class="ci-val" style="margin-bottom:10px;">We love hearing from you. What can we do better?</div>
         <input class="form-input" type="text" placeholder="Your feedback..." style="margin-bottom:10px;">
