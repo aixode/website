@@ -1344,37 +1344,25 @@ async function submitSignup(btn){
   const phone = document.getElementById('sf-phone').value.trim();
   const platformBtn = document.querySelector('#sf-platform .platform-btn.active');
   const platform = platformBtn ? platformBtn.getAttribute('data-value') : '';
-
   if(!first){alert('Please enter your first name.');return;}
   if(!last){alert('Please enter your last name.');return;}
   if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
   if(!platform){alert('Please select your platform.');return;}
-
   btn.disabled=true;
   btn.textContent='Sending...';
-
   try{
-    const res = await fetch('https://api.web3forms.com/submit',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({
-        access_key:'3a33ce93-956e-490a-9c5a-7e6b16235c78',
-        subject:'New Aixode Early Access Registration',
-        from_name:'Aixode Website',
-        name: first+' '+last,
-        email: email,
-        phone: phone ? (document.getElementById('sf-cc').value + ' ' + phone) : 'Not provided',
-        platform: platform,
-        message:'New registration from aixode.com'
-      })
-    });
-    const data = await res.json();
-    if(data.success){
+    const cc = document.getElementById('sf-cc')?.value || '';
+    const fullPhone = phone ? (cc + phone) : '';
+    const [brevoRes, w3res] = await Promise.all([
+      fetch('/api/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,firstName:first,lastName:last,phone:fullPhone,platform})}),
+      fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({access_key:'3a33ce93-956e-490a-9c5a-7e6b16235c78',subject:'New Aixode Early Access Registration',from_name:'Aixode Website',name:first+' '+last,email,phone:fullPhone||'Not provided',platform,message:'New registration from aixode.com'})})
+    ]);
+    const w3data = await w3res.json();
+    const brevoData = await brevoRes.json();
+    if(brevoData.success || w3data.success){
       document.querySelector('.signup-form-wrap').style.display='none';
       document.getElementById('sf-success').style.display='block';
-    } else {
-      throw new Error('Failed');
-    }
+    } else { throw new Error('Failed'); }
   } catch(e){
     btn.disabled=false;
     btn.textContent='Register now for early access →';
