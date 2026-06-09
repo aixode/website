@@ -317,10 +317,10 @@ h1,h2,h3{font-family:'Figtree',sans-serif;}
 .signup-title .accent{color:var(--orange-acc);}
 .signup-sub{color:var(--text-muted);font-size:17px;font-weight:300;line-height:1.7;margin-bottom:44px;}
 .signup-form-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;text-align:left;max-width:520px;margin-left:auto;margin-right:auto;}
-.form-group{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.form-group{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
 .form-label{font-size:13px;font-weight:500;color:rgba(255,255,255,0.75);font-family:'Roboto',sans-serif;letter-spacing:0.3px;}
 .form-label .req{color:var(--orange-acc);}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px;}
 .form-row+.form-group,.form-row+.form-row{padding-top:4px;}
 .form-input{background:rgba(255,255,255,0.05);border:1px solid var(--border2);color:#fff;padding:13px 16px;border-radius:12px;font-size:15px;font-family:'Roboto',sans-serif;font-weight:300;outline:none;transition:border-color 0.2s;width:100%;}
 .form-input::placeholder{color:var(--text-dim);}
@@ -727,7 +727,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
         <div class="t-tag">Beta tester · Used daily</div>
         <div class="t-stars"><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span></div>
         <p class="t-quote">"It's surprising how aware I've become of my screen use. Easier to keep structure, save time and get a better overview of daily life. Less unnecessary screen time."</p>
-        <div class="t-author"><div class="t-avatar">S</div><div><div class="t-name">Sara Swana</div><div class="t-role">Beta tester · Used several times daily</div></div></div>
+        <div class="t-author"><div class="t-avatar">S</div><div><div class="t-name">Sara S.</div><div class="t-role">Beta tester · Used several times daily</div></div></div>
       </div>
       <div class="t-card">
         <div class="t-stars"><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span></div>
@@ -772,8 +772,8 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
 <section class="how-section">
   <div class="how-inner reveal">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:20px;">
-      <div><div class="label"><span class="label-dot"></span>How it works</div><h2 class="section-title">Simple to start.<br>Hard to put down.</h2></div>
       <p class="section-sub" style="max-width:300px;">Four steps to a healthier relationship with your phone.</p>
+      <div style="text-align:right;"><div class="label" style="justify-content:flex-end;"><span class="label-dot"></span>How it works</div><h2 class="section-title">Simple to start.<br>Hard to <span class="accent">put down.</span></h2></div>
     </div>
     <div class="how-grid">
       <div class="how-steps">
@@ -847,7 +847,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
   <div class="signup-inner reveal">
     <div class="label" style="justify-content:center;"><span class="label-dot"></span>Early access</div>
     <h2 class="signup-title">Ready to live<br><span class="accent">more?</span></h2>
-    <p class="signup-sub">Be among the first to test Aixode. It takes 30 seconds — and it's completely free.</p>
+    <p class="signup-sub">Takes only a few seconds and is completely free.</p>
     <div class="signup-form-wrap">
       <!-- Row 1: First name + Last name -->
       <div class="form-row">
@@ -869,28 +869,28 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
         <div class="form-group">
           <label class="form-label">Phone number</label>
           <div style="display:flex;gap:8px;">
-            <select class="form-input" id="sf-cc" style="width:110px;flex-shrink:0;cursor:pointer;">
-              <option value="+47">🇳🇴 +47</option>
-              <option value="+1">🇺🇸 +1</option>
-              <option value="+44">🇬🇧 +44</option>
-              <option value="+46">🇸🇪 +46</option>
-              <option value="+45">🇩🇰 +45</option>
-              <option value="+358">🇫🇮 +358</option>
-              <option value="+49">🇩🇪 +49</option>
-              <option value="+33">🇫🇷 +33</option>
-              <option value="+31">🇳🇱 +31</option>
-              <option value="+34">🇪🇸 +34</option>
-              <option value="+39">🇮🇹 +39</option>
-              <option value="+41">🇨🇭 +41</option>
-              <option value="+43">🇦🇹 +43</option>
-              <option value="+48">🇵🇱 +48</option>
-              <option value="+55">🇧🇷 +55</option>
-              <option value="+27">🇿🇦 +27</option>
-              <option value="+234">🇳🇬 +234</option>
-              <option value="+254">🇰🇪 +254</option>
-              <option value="+91">🇮🇳 +91</option>
-              <option value="+86">🇨🇳 +86</option>
-              <option value="+61">🇦🇺 +61</option>
+            <select class="form-input" id="sf-cc" style="width:72px;flex-shrink:0;cursor:pointer;padding-left:8px;padding-right:4px;">
+              <option value="+47">+47</option>
+              <option value="+1">+1</option>
+              <option value="+44">+44</option>
+              <option value="+46">+46</option>
+              <option value="+45">+45</option>
+              <option value="+358">+358</option>
+              <option value="+49">+49</option>
+              <option value="+33">+33</option>
+              <option value="+31">+31</option>
+              <option value="+34">+34</option>
+              <option value="+39">+39</option>
+              <option value="+41">+41</option>
+              <option value="+43">+43</option>
+              <option value="+48">+48</option>
+              <option value="+55">+55</option>
+              <option value="+27">+27</option>
+              <option value="+234">+234</option>
+              <option value="+254">+254</option>
+              <option value="+91">+91</option>
+              <option value="+86">+86</option>
+              <option value="+61">+61</option>
             </select>
             <input class="form-input" type="tel" id="sf-phone" style="flex:1;">
           </div>
@@ -928,7 +928,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
     <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
-    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
+    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
   <div class="footer-bottom"><p class="footer-legal">&copy; 2026 Aixode &middot; Org. no. 936 051 901</p><div class="footer-social"><a href="https://www.linkedin.com/company/aixode" target="_blank">in</a></div></div>
 </footer>
@@ -960,7 +960,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
     <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
-    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
+    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
   <div class="footer-bottom"><p class="footer-legal">&copy; 2026 Aixode &middot; Org. no. 936 051 901</p><div class="footer-social"><a href="https://www.linkedin.com/company/aixode" target="_blank">in</a></div></div>
 </footer>
@@ -1017,7 +1017,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
     <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
-    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
+    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
   <div class="footer-bottom"><p class="footer-legal">&copy; 2026 Aixode &middot; Org. no. 936 051 901</p><div class="footer-social"><a href="https://www.linkedin.com/company/aixode" target="_blank">in</a></div></div>
 </footer>
@@ -1055,7 +1055,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
       <div class="pricing-card" style="text-align:center;padding:40px 28px;">
         <div style="font-size:32px;margin-bottom:16px;"><i class="ph ph-star" style="font-size:32px;color:var(--orange-acc);"></i></div>
         <div class="plan-name" style="margin-top:0;">Lifetime</div>
-        <p class="plan-desc">Everything in Pro, forever. One payment, no renewals. For early believers.</p>
+        <p class="plan-desc">Everything in Pro, forever. One payment, no renewals.</p>
         <div style="margin-top:20px;padding:10px 0;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);font-weight:500;letter-spacing:1px;">PRICE TBA AT LAUNCH</div>
       </div>
     </div>
@@ -1068,7 +1068,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
     <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
-    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
+    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
   <div class="footer-bottom"><p class="footer-legal">&copy; 2026 Aixode &middot; Org. no. 936 051 901</p><div class="footer-social"><a href="https://www.linkedin.com/company/aixode" target="_blank">in</a></div></div>
 </footer>
@@ -1108,7 +1108,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     </div>
     <div class="contact-aside">
       <div class="contact-aside-card"><div class="ci-icon"><i class="ph ph-envelope" style="font-size:20px;color:var(--orange-acc);"></i></div><div class="ci-title">Email</div><div class="ci-val"><a href="mailto:contact@aixode.com">contact@aixode.com</a></div></div>
-      <div class="contact-aside-card"><div class="ci-icon"><i class="ph ph-phone" style="font-size:20px;color:var(--orange-acc);"></i></div><div class="ci-title">Phone</div><div class="ci-val">+47 913 36 274</div></div>
+      <div class="contact-aside-card"><div class="ci-icon"><i class="ph ph-phone" style="font-size:20px;color:var(--orange-acc);"></i></div><div class="ci-title">Phone</div><div class="ci-val"></div></div>
       <div class="contact-aside-card"><div class="ci-icon"><i class="ph ph-linkedin-logo" style="font-size:20px;color:var(--orange-acc);"></i></div><div class="ci-title">LinkedIn</div><div class="ci-val"><a href="https://www.linkedin.com/company/aixode" target="_blank">linkedin.com/company/aixode</a></div></div>
       <div class="contact-aside-card">
         <div id="feedback-section"></div><div class="ci-icon"><i class="ph ph-heart" style="font-size:20px;color:var(--orange-acc);"></i></div><div class="ci-title">Share feedback</div>
@@ -1124,7 +1124,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
     <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
-    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
+    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
   <div class="footer-bottom"><p class="footer-legal">&copy; 2026 Aixode &middot; Org. no. 936 051 901</p><div class="footer-social"><a href="https://www.linkedin.com/company/aixode" target="_blank">in</a></div></div>
 </footer>
@@ -1150,7 +1150,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <div><div class="footer-logo">Aixode</div><p class="footer-tagline">Screen less. Live more.</p></div>
     <div><div class="footer-col-title">Product</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('pricing')">Pricing</a></li><li><a onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">Get early access</a></li></ul></div>
     <div><div class="footer-col-title">Company</div><ul class="footer-links"><li><a onclick="showPage('mission')">Mission &amp; Vision</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('support')">Support</a></li></ul></div>
-    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li><a href="tel:+4791336274">+47 913 36 274</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
+    <div><div class="footer-col-title">Legal</div><ul class="footer-links"><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a href="mailto:contact@aixode.com">contact@aixode.com</a></li><li style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:4px;">Built in Norway</li></ul></div>
   </div>
   <div class="footer-bottom"><p class="footer-legal">&copy; 2026 Aixode &middot; Org. no. 936 051 901</p><div class="footer-social"><a href="https://www.linkedin.com/company/aixode" target="_blank">in</a></div></div>
 </footer>
