@@ -1292,7 +1292,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
         <input class="form-input" type="email" placeholder="Email address">
         <select class="form-input"><option value="">Select a topic</option><option>General question</option><option>Bug report</option><option>Feature request</option><option>Privacy / data</option><option>Billing</option><option>Other</option></select>
         <textarea class="form-input" rows="4" placeholder="Your message..." style="resize:vertical;"></textarea>
-        <button class="form-submit">Send message &rarr;</button>
+        <button class="form-submit" onclick="sendSupportMessage(this)">Send message &rarr;</button>
       </div>
     </div>
     <div class="contact-aside">
@@ -1414,6 +1414,58 @@ document.querySelectorAll('.platform-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{btn.closest('.platform-select').querySelectorAll('.platform-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});
 });
 initReveal();
+
+async function sendSupportMessage(btn){
+  const inputs = btn.closest('div').querySelectorAll('input, select, textarea');
+  const first = inputs[0].value.trim();
+  const last = inputs[1].value.trim();
+  const email = inputs[2].value.trim();
+  const topic = inputs[3].value;
+  const message = inputs[4].value.trim();
+  if(!first||!last){alert('Please enter your name.');return;}
+  if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
+  if(!topic){alert('Please select a topic.');return;}
+  if(!message){alert('Please enter your message.');return;}
+  btn.disabled=true; btn.textContent='Sending...';
+  try{
+    const res = await fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({access_key:'3a33ce93-956e-490a-9c5a-7e6b16235c78',subject:'Support message from '+first+' '+last,from_name:'Aixode Website',name:first+' '+last,email,topic,message})
+    });
+    const data = await res.json();
+    if(data.success){
+      btn.closest('.contact-form-card').innerHTML='<div style="padding:40px;text-align:center;"><p style="font-size:20px;font-weight:700;color:#fff;margin-bottom:12px;">Message sent!</p><p style="color:rgba(255,255,255,0.55);">Thanks for reaching out. We typically reply within 24 hours on weekdays.</p></div>';
+    } else { throw new Error(); }
+  } catch(e){
+    btn.disabled=false; btn.textContent='Send message →';
+    alert('Something went wrong. Please email us directly at contact@aixode.com');
+  }
+}
+
+async function sendFeedback(btn){
+  const input = btn.previousElementSibling;
+  const feedback = input.value.trim();
+  if(!feedback){alert('Please enter your feedback.');return;}
+  btn.disabled=true; btn.textContent='Sending...';
+  try{
+    const res = await fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({access_key:'3a33ce93-956e-490a-9c5a-7e6b16235c78',subject:'Feedback from Aixode website',from_name:'Aixode Website',message:feedback})
+    });
+    const data = await res.json();
+    if(data.success){
+      btn.textContent='Feedback sent!';
+      input.value='';
+      setTimeout(()=>{btn.disabled=false;btn.textContent='Send feedback →';},3000);
+    } else { throw new Error(); }
+  } catch(e){
+    btn.disabled=false; btn.textContent='Send feedback →';
+    alert('Something went wrong. Please email us directly at contact@aixode.com');
+  }
+}
+
 </script>
 </body>
 </html>
