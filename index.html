@@ -1117,9 +1117,10 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
       <button class="form-submit" onclick="submitSignup(this)" id="sf-submit">
         Register now for early access &rarr;
       </button>
-      <div id="sf-success" style="display:none;text-align:center;padding:20px;color:var(--orange-acc);font-weight:600;font-size:16px;">
-        <i class="ph ph-check-circle" style="font-size:24px;margin-bottom:8px;display:block;"></i>
-        You're on the list! We'll be in touch soon.
+      <div id="sf-success" style="display:none;text-align:center;padding:40px 20px;">
+        <div style="font-size:48px;margin-bottom:16px;">🎉</div>
+        <h3 style="color:#fff;font-size:22px;font-weight:800;margin:0 0 10px 0;letter-spacing:-0.5px;">You're on the list!</h3>
+        <p style="color:rgba(255,255,255,0.55);font-size:15px;margin:0;">Check your inbox — a confirmation email is on its way.</p>
       </div>
       <p class="form-note">By signing up you agree to our <a onclick="showPage('privacy')" style="color:var(--orange-acc);cursor:pointer;">Privacy Policy</a>. No spam, ever.</p>
     </div>
@@ -1373,8 +1374,10 @@ async function submitSignup(btn){
     const w3data = await w3res.json();
     const brevoData = await brevoRes.json();
     if(brevoData.success || w3data.success){
+      const successEl = document.getElementById('sf-success');
       document.querySelector('.signup-form-wrap').style.display='none';
-      document.getElementById('sf-success').style.display='block';
+      successEl.style.display='block';
+      successEl.scrollIntoView({behavior:'smooth', block:'center'});
     } else { throw new Error('Failed'); }
   } catch(e){
     btn.disabled=false;
