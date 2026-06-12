@@ -672,12 +672,26 @@ function closeMobileMenu(){
 function initReveal(){
   const els = document.querySelectorAll('.reveal');
   if(!els.length) return;
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }});
-  },{threshold:0.1});
-  els.forEach(el=>observer.observe(el));
+  // Immediately show elements already in viewport
+  els.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight) el.classList.add('visible');
+  });
+  // Watch remaining elements
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, {threshold: 0.05, rootMargin: '0px 0px -50px 0px'});
+  els.forEach(el => { if(!el.classList.contains('visible')) observer.observe(el); });
 }
 document.addEventListener('DOMContentLoaded', initReveal);
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 50) el.classList.add('visible');
+  });
+}, {passive: true});
 
 
 async function submitSignup(btn){
