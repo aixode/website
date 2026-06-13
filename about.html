@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -571,10 +571,117 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
   content:"★";position:absolute;left:0;top:0;
   width:50%;overflow:hidden;color:var(--orange-acc);
 }
+
+/* ===== LIGHT MODE ===== */
+[data-theme="light"] {
+  --bg:#f5f5f0;
+  --bg2:#eeede8;
+  --bg3:#e6e5e0;
+  --surface:rgba(0,0,0,0.04);
+  --surface2:rgba(0,0,0,0.07);
+  --border:rgba(0,0,0,0.1);
+  --border2:rgba(0,0,0,0.15);
+  --text:#0d0f14;
+  --text-muted:rgba(13,15,20,0.6);
+  --text-dim:rgba(13,15,20,0.35);
+  --orange-acc:#FF6B2B;
+  --orange-acc-dim:rgba(255,107,43,0.1);
+  --orange-acc-glow:rgba(255,107,43,0.15);
+  --orange:#cc4400;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md:0 4px 20px rgba(0,0,0,0.12);
+  --shadow-lg:0 12px 48px rgba(0,0,0,0.16);
+  --shadow-orange-acc:0 8px 32px rgba(255,107,43,0.2);
+}
+[data-theme="light"] body {
+  background: var(--bg);
+  color: var(--text);
+}
+[data-theme="light"] nav {
+  background: rgba(245,245,240,0.9);
+  border-bottom: 1px solid var(--border);
+}
+[data-theme="light"] .nav-links a {
+  color: var(--text-muted);
+}
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active {
+  color: var(--text);
+  background: var(--surface2);
+}
+[data-theme="light"] .hero-title,
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3 {
+  color: var(--text);
+}
+[data-theme="light"] .hero-title .accent { color: var(--orange-acc); }
+[data-theme="light"] .trust-divider { background: var(--border2); }
+[data-theme="light"] .trust-item { color: var(--text-muted); }
+[data-theme="light"] .features-card,
+[data-theme="light"] .pricing-card,
+[data-theme="light"] .support-card,
+[data-theme="light"] .analysis-card,
+[data-theme="light"] .story-block,
+[data-theme="light"] .team-card,
+[data-theme="light"] .faq-item,
+[data-theme="light"] .review-card {
+  background: var(--bg2);
+  border-color: var(--border);
+}
+[data-theme="light"] .hero-badge {
+  background: var(--surface2);
+  border-color: var(--border2);
+  color: var(--text-muted);
+}
+[data-theme="light"] footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+[data-theme="light"] .footer-tagline,
+[data-theme="light"] .footer-links a,
+[data-theme="light"] .footer-col-title { color: var(--text-muted); }
+[data-theme="light"] .footer-bottom { color: var(--text-dim); border-top-color: var(--border); }
+[data-theme="light"] .signup-form-wrap { background: var(--bg2); border-color: var(--border); }
+[data-theme="light"] .sf-input,
+[data-theme="light"] .sf-select { background: var(--bg3); border-color: var(--border2); color: var(--text); }
+[data-theme="light"] .ph-ob-screen { background: var(--bg3); }
+[data-theme="light"] .inner-hero { background: var(--bg2); }
+[data-theme="light"] .section-sub { color: var(--text-muted); }
+[data-theme="light"] .label { color: var(--text-muted); }
+[data-theme="light"] .nav-logo-img { filter: invert(1) brightness(0); }
+
+/* ===== THEME TOGGLE ===== */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  color: var(--text-dim);
+  font-size: 20px;
+  line-height: 1;
+}
+.theme-btn:hover { background: var(--surface2); color: var(--text-muted); }
+.theme-btn.active { color: var(--orange-acc); background: var(--orange-acc-dim); }
+
 </style>
 </head>
 <body>
-<nav style="justify-content:center;">
+<nav style="justify-content:center;position:relative;">
   <a href="/" class="nav-logo-link"><img src="/assets/aixode-logo.png" alt="Aixode" class="nav-logo" style="height:28px;cursor:pointer;"></a>
   <ul class="nav-links" style="margin:0 auto;">
     <li><a href="/">Home</a></li>
@@ -583,6 +690,14 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="/support">Support</a></li>
   </ul>
+  <div class="theme-toggle">
+    <button class="theme-btn" id="btn-light" onclick="setTheme('light')" title="Light mode" aria-label="Light mode">
+      <i class="ph-bold ph-sun"></i>
+    </button>
+    <button class="theme-btn active" id="btn-dark" onclick="setTheme('dark')" title="Dark mode" aria-label="Dark mode">
+      <i class="ph-bold ph-moon"></i>
+    </button>
+  </div>
 </nav>
 
 <section class="inner-hero" style="text-align:center;"><div class="inner-hero-inner" style="max-width:100%;"><div class="label" style="justify-content:center;"><span class="label-dot"></span>Our story</div><h1>Built by people<br>who <span>noticed.</span></h1><p style="margin:0 auto;">Aixode was born from a simple observation — technology had followed us into the spaces where life is supposed to unfold without digital interruption.</p></div></section>
@@ -674,6 +789,25 @@ window.addEventListener('scroll', () => {
   });
 }, {passive: true});
 
+
+
+// ===== THEME TOGGLE =====
+function initTheme() {
+  const saved = localStorage.getItem('aixode-theme') || 'dark';
+  applyTheme(saved);
+}
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('aixode-theme', theme);
+  const sunBtn = document.getElementById('btn-light');
+  const moonBtn = document.getElementById('btn-dark');
+  if (sunBtn && moonBtn) {
+    sunBtn.classList.toggle('active', theme === 'light');
+    moonBtn.classList.toggle('active', theme === 'dark');
+  }
+}
+function setTheme(theme) { applyTheme(theme); }
+document.addEventListener('DOMContentLoaded', initTheme);
 
 </script>
 </body>
