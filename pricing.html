@@ -899,6 +899,138 @@ nav {
 .theme-btn:hover { background: var(--surface2); color: var(--text-muted); }
 .theme-btn.active { color: var(--orange-acc); background: var(--orange-acc-dim); }
 
+
+/* ===== LIGHT MODE NUCLEAR OVERRIDES =====
+   These !important rules beat all hardcoded #fff colors */
+[data-theme="light"] .section-title,
+[data-theme="light"] .hero-title,
+[data-theme="light"] .hero-title span,
+[data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3,
+[data-theme="light"] .feature-title,
+[data-theme="light"] .step-title,
+[data-theme="light"] .how-vis-title,
+[data-theme="light"] .plan-name,
+[data-theme="light"] .plan-price,
+[data-theme="light"] .signup-title,
+[data-theme="light"] .inner-hero h1,
+[data-theme="light"] .mission-card h3,
+[data-theme="light"] .mission-strip h2,
+[data-theme="light"] .value-name,
+[data-theme="light"] .story-block h2,
+[data-theme="light"] .team-name,
+[data-theme="light"] .support-card h3,
+[data-theme="light"] .faq-question,
+[data-theme="light"] .contact-form-card h3,
+[data-theme="light"] .ci-title,
+[data-theme="light"] .privacy-content h2,
+[data-theme="light"] .popular-badge,
+[data-theme="light"] .footer-logo { color: var(--text) !important; }
+
+[data-theme="light"] .hero-sub,
+[data-theme="light"] .section-sub,
+[data-theme="light"] .hero-p,
+[data-theme="light"] .step-desc,
+[data-theme="light"] .feature-desc,
+[data-theme="light"] .feature-quote,
+[data-theme="light"] .plan-desc,
+[data-theme="light"] .plan-feature,
+[data-theme="light"] .story-text,
+[data-theme="light"] .story-text strong,
+[data-theme="light"] .team-role,
+[data-theme="light"] .team-bio,
+[data-theme="light"] .faq-answer,
+[data-theme="light"] .support-card p,
+[data-theme="light"] .ci-desc,
+[data-theme="light"] .privacy-content p,
+[data-theme="light"] .privacy-content li,
+[data-theme="light"] .mission-card p,
+[data-theme="light"] .value-desc,
+[data-theme="light"] .footer-tagline,
+[data-theme="light"] .footer-links li,
+[data-theme="light"] .footer-bottom,
+[data-theme="light"] .label,
+[data-theme="light"] .trust-item,
+[data-theme="light"] .t-role,
+[data-theme="light"] .t-text,
+[data-theme="light"] .mini-ring-num,
+[data-theme="light"] .mini-quick-num { color: var(--text-muted) !important; }
+
+[data-theme="light"] .t-name { color: var(--text) !important; }
+
+[data-theme="light"] .nav-links a { color: var(--text-muted) !important; }
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active { color: var(--text) !important; }
+
+/* Form inputs */
+[data-theme="light"] .form-input,
+[data-theme="light"] .sf-input,
+[data-theme="light"] .sf-select,
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea { color: var(--text) !important; background: var(--bg2) !important; border-color: var(--border2) !important; }
+
+/* Hero badge */
+[data-theme="light"] .hero-badge { background: rgba(0,0,0,0.07) !important; border-color: var(--border2) !important; color: var(--text-muted) !important; }
+[data-theme="light"] .hero-badge span:not(.hero-badge-dot) { color: var(--text-muted) !important; }
+
+/* Secondary button */
+[data-theme="light"] .hero-btn-secondary { color: var(--text) !important; border-color: var(--border2) !important; background: rgba(0,0,0,0.04) !important; }
+
+/* Cards */
+[data-theme="light"] .feature-card,
+[data-theme="light"] .pricing-card,
+[data-theme="light"] .support-card,
+[data-theme="light"] .mission-card,
+[data-theme="light"] .value-card,
+[data-theme="light"] .review-card,
+[data-theme="light"] .faq-item,
+[data-theme="light"] .analysis-card,
+[data-theme="light"] .team-card,
+[data-theme="light"] .story-block,
+[data-theme="light"] .contact-form-card { background: var(--bg2) !important; border-color: var(--border) !important; }
+
+/* Steps section bg */
+[data-theme="light"] .steps-section,
+[data-theme="light"] .how-section { background: var(--bg2) !important; }
+[data-theme="light"] .step-num { color: var(--orange-acc) !important; }
+[data-theme="light"] .step-num-wrap.active span { color: #fff !important; }
+
+/* Signup section */
+[data-theme="light"] .signup-section,
+[data-theme="light"] .cta-section,
+[data-theme="light"] .mission-cta { background: var(--bg2) !important; }
+[data-theme="light"] .signup-form-wrap,
+[data-theme="light"] .contact-form-card { background: var(--bg) !important; border-color: var(--border2) !important; }
+
+/* Platform buttons */
+[data-theme="light"] .platform-btn { background: var(--bg2) !important; border-color: var(--border2) !important; color: var(--text-muted) !important; }
+[data-theme="light"] .platform-btn:hover { border-color: var(--orange-acc) !important; color: var(--text) !important; }
+[data-theme="light"] .platform-btn.active { background: var(--orange-acc-dim) !important; border-color: var(--orange-acc) !important; color: var(--text) !important; }
+[data-theme="light"] .platform-btn.active .check-icon::after { color: var(--orange-acc) !important; }
+
+/* Footer */
+[data-theme="light"] footer { background: var(--bg2) !important; border-top-color: var(--border) !important; }
+[data-theme="light"] .footer-col-title { color: var(--text) !important; }
+[data-theme="light"] .footer-links a { color: var(--text-muted) !important; }
+[data-theme="light"] .footer-links a:hover { color: var(--text) !important; }
+[data-theme="light"] .footer-bottom { border-top-color: var(--border) !important; color: var(--text-dim) !important; }
+[data-theme="light"] .footer-social a { color: var(--text-muted) !important; background: var(--surface2) !important; border-color: var(--border) !important; }
+[data-theme="light"] .footer-social a:hover { background: var(--orange-acc) !important; color: #fff !important; }
+
+/* Logo - make dark */
+[data-theme="light"] .nav-logo { filter: brightness(0) !important; }
+[data-theme="light"] .footer-logo img { filter: brightness(0) !important; }
+
+/* Dividers */
+[data-theme="light"] .trust-divider { background: var(--border2) !important; }
+[data-theme="light"] .stats-bar { background: var(--bg3) !important; }
+[data-theme="light"] .stat-value { color: var(--orange-acc) !important; }
+[data-theme="light"] .stat-label { color: var(--text-muted) !important; }
+[data-theme="light"] .stat-divider { background: var(--border2) !important; }
+
+/* Nav */
+[data-theme="light"] nav { background: rgba(247,246,242,0.92) !important; border-bottom-color: var(--border) !important; }
+
 </style>
 </head>
 <body>
