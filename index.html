@@ -628,6 +628,12 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
   .how-steps{order:2;}
   .how-inner{order:1;}
 }
+
+@media(max-width:900px){
+  .how-grid{grid-template-columns:1fr;}
+  .how-steps{order:1;}
+  .how-visual{order:2;}
+}
 </style>
 </head>
 <body>
@@ -640,7 +646,15 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="/support">Support</a></li>
   </ul>
+<button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="/">Home</a>
+  <a href="/mission">Mission &amp; Vision</a>
+  <a href="/about">About</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/support">Support</a>
+</div>
 
 
 <section class="hero">
