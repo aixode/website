@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-<li><a href="/support">Support</a></li>     </ul>   <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>   </nav>   <div class="nav-mobile-menu" id="navMobileMenu"><a href="/">Home</a><a href="/mission">Mission &amp; Vision</a><a href="/about">About</a><a href="/pricing">Pricing</a><a href="/support">Support</a></div> <title>Aixode - Screen less. Live more.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aixode - Screen less. Live more.</title>
   <meta name="description" content="Aixode helps you and your loved ones break unhealthy phone habits, sleep better, and focus on what truly matters.">
   <link rel="canonical" href="https://www.aixode.com/">
   <!-- Open Graph -->
@@ -551,18 +552,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
 }
 @media(max-width:480px){
   .values-grid{grid-template-columns:1fr;}
-  </ul>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    </nav>
-    <div class="nav-mobile-menu" id="navMobileMenu">
-      <a href="/">Home</a>
-      <a href="/mission">Mission &amp; Vision</a>
-      <a href="/about">About</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/support">Support</a>
-    </div>.team-grid{grid-template-columns:1fr !important;}
+  .team-grid{grid-template-columns:1fr !important;}
   .hero-title{font-size:clamp(38px,12vw,56px);}
   .phones-wrap{max-width:280px;height:320px;}
   .phone-main{width:150px;height:310px;}
@@ -581,7 +571,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
   content:"★";position:absolute;left:0;top:0;
   width:50%;overflow:hidden;color:var(--orange-acc);
 }
-
+</style>
 </head>
 <body>
 <nav style="justify-content:center;">
@@ -1305,5 +1295,5 @@ async function sendFeedback(btn){
 
 
 </script>
-.nav-mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:999;} .nav-mobile-menu.open{display:flex;} .nav-mobile-menu a{padding:12px 0;font-size:16px;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);font-weight:500;} .nav-mobile-menu a:last-child{border-bottom:none;} .nav-hamburger span{background:var(--text);} .nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);} .nav-hamburger.active span:nth-child(2){opacity:0;} .nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);} </style>
+</body>
 </html>
