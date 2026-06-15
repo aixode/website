@@ -571,7 +571,18 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
   content:"★";position:absolute;left:0;top:0;
   width:50%;overflow:hidden;color:var(--orange-acc);
 }
-undefined</style>
+
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform 0.25s,opacity 0.25s;}
+.nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.active span:nth-child(2){opacity:0;}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 0;flex-direction:column;z-index:998;}
+.nav-mobile-menu.open{display:flex;}
+.nav-mobile-menu a{padding:14px 24px;font-size:16px;color:var(--text);text-decoration:none;font-weight:500;border-bottom:1px solid var(--border);}
+.nav-mobile-menu a:last-child{border-bottom:none;}
+@media(max-width:900px){.nav{justify-content:space-between!important;}.nav-logo-link{margin-right:auto;}.nav-links{display:none!important;}.nav-hamburger{display:flex!important;}}
+</style>
 </head>
 <body>
 <nav style="justify-content:center;">
@@ -582,7 +593,16 @@ undefined</style>
     <li><a href="/about" class="active">About</a></li>
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="/support">Support</a></li>
-  undefined
+  </ul>
+<button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="/">Home</a>
+  <a href="/mission">Mission &amp; Vision</a>
+  <a href="/about">About</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/support">Support</a>
+</div>
 
 <section class="inner-hero" style="text-align:center;"><div class="inner-hero-inner" style="max-width:100%;"><div class="label" style="justify-content:center;"><span class="label-dot"></span>Our story</div><h1>Built by people<br>who <span>noticed.</span></h1><p style="margin:0 auto;">Aixode was born from a simple observation — technology had followed us into the spaces where life is supposed to unfold without digital interruption.</p></div></section>
 <div class="about-content">
@@ -675,5 +695,8 @@ window.addEventListener('scroll', () => {
 
 
 </script>
-undefined
+<script>
+(function(){var btn=document.getElementById('navHamburger');var menu=document.getElementById('navMobileMenu');if(btn&&menu){btn.addEventListener('click',function(){btn.classList.toggle('active');menu.classList.toggle('open');});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){btn.classList.remove('active');menu.classList.remove('open');});});}})();
+</script>
+</body>
 </html>
