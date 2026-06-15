@@ -634,6 +634,45 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
   .how-steps{order:1;}
   .how-visual{order:2;}
 }
+
+/* FIX 1: How it works — label above Four steps on mobile */
+@media(max-width:900px){
+  .how-inner > div:first-child{
+    flex-direction:column-reverse;
+  }
+}
+
+/* FIX 2: Feature cards spacing on mobile */
+@media(max-width:900px){
+  .features-grid{
+    grid-template-columns:1fr !important;
+    gap:16px !important;
+  }
+}
+
+/* FIX 3: Footer logo left alignment on mobile */
+@media(max-width:900px){
+  .footer-top > div:first-child img,
+  .footer-top > div:first-child .footer-tagline{
+    padding-left:0 !important;
+    margin-left:0 !important;
+  }
+}
+
+/* FIX 4: Active nav link highlight */
+.nav-mobile-menu a.active{
+  border-left:3px solid var(--orange-acc);
+  padding-left:21px;
+  color:var(--text) !important;
+}
+
+/* FIX 5: Step num active — black text */
+.step-num-wrap.active span{
+  color:#151515 !important;
+}
+.step-num-wrap.active{
+  color:#151515 !important;
+}
 </style>
 </head>
 <body>
@@ -1383,6 +1422,16 @@ async function sendFeedback(btn){
       });
     });
   }
+})();
+</script>
+
+<script>
+(function(){
+  var path = window.location.pathname.replace(/\/$/,'') || '/';
+  document.querySelectorAll('.nav-mobile-menu a').forEach(function(a){
+    var href = a.getAttribute('href').replace(/\/$/,'') || '/';
+    if(href === path) a.classList.add('active');
+  });
 })();
 </script>
 </body>
