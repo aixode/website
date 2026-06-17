@@ -1,46 +1,29 @@
 {
-    "redirects": [
-          {
-                  "source": "/missionandvision",
-                  "destination": "/mission",
-                  "permanent": true
-          }
-    ],
-    "rewrites": [
-          {
-                  "source": "/mission",
-                  "destination": "/mission.html"
-          },
-          {
-                  "source": "/about",
-                  "destination": "/about.html"
-          },
-          {
-                  "source": "/pricing",
-                  "destination": "/pricing.html"
-          },
-          {
-                  "source": "/support",
-                  "destination": "/support.html"
-          },
-          {
-                  "source": "/privacy",
-                  "destination": "/privacy.html"
-          }
-    ],
-    "headers": [
-          {
-                  "source": "/(.*)",
-                  "headers": [
-                            {
-                                        "key": "X-Content-Type-Options",
-                                        "value": "nosniff"
-                            },
-                            {
-                                        "key": "X-Frame-Options",
-                                        "value": "DENY"
-                            }
-                  ]
-          }
-    ]
+      "redirects": [
+              { "source": "/missionandvision", "destination": "/mission", "permanent": true },
+              { "source": "/pricing-plans/plans-pricing", "destination": "/pricing", "permanent": true },
+              { "source": "/product-page/smartphone-x1", "destination": "/", "permanent": true },
+              { "source": "/product-page/smartphone-y2", "destination": "/", "permanent": true },
+              { "source": "/product-page/smartphone-z3", "destination": "/", "permanent": true },
+              { "source": "/product-page/smartwatch-v2", "destination": "/", "permanent": true },
+              { "source": "/product-page/ultra-slim-laptop", "destination": "/", "permanent": true },
+              { "source": "/product-page/bluetooth-headset-pro", "destination": "/", "permanent": true },
+              { "source": "/bluetoot/:path*", "destination": "/", "permanent": true }
+      ],
+      "rewrites": [
+              { "source": "/mission", "destination": "/mission.html" },
+              { "source": "/about", "destination": "/about.html" },
+              { "source": "/pricing", "destination": "/pricing.html" },
+              { "source": "/support", "destination": "/support.html" },
+              { "source": "/privacy", "destination": "/privacy.html" }
+      ],
+      "headers": [
+              {
+                        "source": "/(.*)",
+                        "headers": [
+                                    { "key": "X-Content-Type-Options", "value": "nosniff" },
+                                    { "key": "X-Frame-Options", "value": "DENY" }
+                        ]
+              }
+      ]
 }
