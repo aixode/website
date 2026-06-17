@@ -689,5 +689,6 @@ window.addEventListener('scroll', () => {
 
 </script>
 <script>(function(){var b=document.getElementById('navHamburger');var m=document.getElementById('navMobileMenu');if(b&&m){b.addEventListener('click',function(){b.classList.toggle('active');m.classList.toggle('open');});m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('active');m.classList.remove('open');});});}})();</script>
+<script>(function(){var path=window.location.pathname.replace(/\/$/,'')||'/';document.querySelectorAll('.nav-mobile-menu a').forEach(function(a){var href=a.getAttribute('href').replace(/\/$/,'')||'/';if(href===path)a.classList.add('active');});})();</script>
 </body>
 </html>
