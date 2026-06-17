@@ -698,5 +698,6 @@ window.addEventListener('scroll', () => {
 <script>
 (function(){var btn=document.getElementById('navHamburger');var menu=document.getElementById('navMobileMenu');if(btn&&menu){btn.addEventListener('click',function(){btn.classList.toggle('active');menu.classList.toggle('open');});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){btn.classList.remove('active');menu.classList.remove('open');});});}})();
 </script>
+<script>(function(){var path=window.location.pathname.replace(/\/$/,'')||'/';document.querySelectorAll('.nav-mobile-menu a').forEach(function(a){var href=a.getAttribute('href').replace(/\/$/,'')||'/';if(href===path)a.classList.add('active');});})();</script>
 </body>
 </html>
