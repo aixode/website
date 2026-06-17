@@ -13,8 +13,8 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Aixode">
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Aixode - Screen less. Live more.">
+  <meta name="twitter:card" content="summary">hh
+  <meta name="twitter:title" content="Aixode - Screen less. Live more.">h
   <meta name="twitter:description" content="Aixode helps you and your loved ones break unhealthy phone habits, sleep better, and focus on what truly matters.">
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/favicon.png">
@@ -242,7 +242,7 @@ h1,h2,h3{font-family:'Figtree',sans-serif;}
 .testimonials-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
 .t-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;transition:all 0.3s;}
 .t-card:hover{border-color:rgba(255,107,43,0.25);background:var(--surface2);transform:translateY(-3px);}
-.t-card.featured{background:linear-gradient(135deg,rgba(255,107,43,0.1) 0%,rgba(255,107,43,0.04) 100%);border-color:rgba(255,107,43,0.22);}
+.t-card.featured{background:var(--surface);border-color:var(--border);}
 .t-tag{display:inline-block;background:rgba(255,107,43,0.1);color:var(--orange-acc);font-size:11px;padding:3px 10px;border-radius:100px;margin-bottom:14px;font-weight:500;}
 .t-stars{display:flex;gap:3px;margin-bottom:14px;}
 .t-star{color:var(--orange-acc);font-size:13px;}
@@ -256,12 +256,12 @@ h1,h2,h3{font-family:'Figtree',sans-serif;}
 .features-section{padding:100px 52px;background:var(--bg2);border-top:1px solid var(--border);}
 .features-inner{max-width:1100px;margin:0 auto;}
 .features-header{text-align:center;max-width:580px;margin:0 auto 64px;}
-.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
-.feature-card{background:var(--bg2);padding:52px;position:relative;overflow:hidden;transition:background 0.3s;}
-.feature-card:hover{background:var(--bg3);}
+.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;position:relative;overflow:hidden;transition:all 0.3s;display:flex;flex-direction:column;min-height:220px;justify-content:center;}
+.feature-card:hover{border-color:rgba(255,107,43,0.25);background:var(--surface2);transform:translateY(-3px);}
 .feature-accent{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange-acc),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
 .feature-card:hover .feature-accent{transform:scaleX(1);}
-.feature-icon-wrap{width:52px;height:52px;border-radius:14px;background:transparent;border:none;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:22px;}
+.feature-icon-wrap{width:52px;height:52px;border-radius:14px;background:transparent;border:none;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:12px;}
 .feature-title{font-family:'Figtree',sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;margin-bottom:12px;color:#fff;}
 .feature-desc{color:var(--text-muted);font-size:15px;font-weight:300;line-height:1.75;}
 .feature-quote{margin-top:18px;padding:12px 14px;background:transparent;border-left:2px solid var(--orange-acc);font-size:13px;color:var(--text-muted);font-style:italic;line-height:1.6;opacity:0.9;}
@@ -841,8 +841,7 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
       <div><div class="label"><span class="label-dot"></span>Beta testers</div><h2 class="section-title" style="max-width:400px;">What people are already saying.</h2></div>
     </div>
     <div class="testimonials-grid reveal">
-      <div class="t-card featured">
-        <div class="t-tag">Beta tester · Used daily</div>
+      <div class="t-card">
         <div class="t-stars"><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span></div>
         <p class="t-quote">"It's surprising how aware I've become of my screen use. Easier to keep structure, save time and get a better overview of daily life. Less unnecessary screen time."</p>
         <div class="t-author"><div class="t-avatar">S</div><div><div class="t-name">Sara S.</div><div class="t-role">Beta tester · Used several times daily</div></div></div>
