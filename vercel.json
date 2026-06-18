@@ -8,7 +8,8 @@
               { "source": "/product-page/smartwatch-v2", "destination": "/", "permanent": true },
               { "source": "/product-page/ultra-slim-laptop", "destination": "/", "permanent": true },
               { "source": "/product-page/bluetooth-headset-pro", "destination": "/", "permanent": true },
-              { "source": "/bluetoot/:path*", "destination": "/", "permanent": true }
+              { "source": "/bluetoot/:path*", "destination": "/", "permanent": true },
+                    { "source": "/favicon.ico", "destination": "/assets/favicon.png", "permanent": true }
       ],
       "rewrites": [
               { "source": "/mission", "destination": "/mission.html" },
