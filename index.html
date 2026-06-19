@@ -1471,7 +1471,8 @@ async function sendFeedback(btn){
   document.querySelectorAll('.nav-mobile-menu a').forEach(function(a){
     var href = a.getAttribute('href').replace(/\/$/,'') || '/';
     if(href === path) a.classList.add('active');
-  })();
+  });
+})();
   </script>
   
   <footer style="background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.08);padding:48px 24px;text-align:center;">
