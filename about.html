@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Aixode</title>
-  <meta name="description" content="Aixode was born from a simple observation — technology had followed us into the spaces where life is supposed to unfold without digital interruption.">
+  <meta name="description"hh content="Aixode was born from a simple observation — technology had followed us into the spaces where life is supposed to unfold without digital interruption.">
   <link rel="canonical" href="https://www.aixode.com/about">
   <!-- Open Graph -->
   <meta property="og:title" content="About - Aixode">
@@ -601,7 +601,15 @@ footer{background:#0a0c10;padding:64px 52px 40px;border-top:1px solid var(--bord
 .nav-mobile-menu.open{display:flex;}
 .nav-mobile-menu a{padding:14px 24px;font-size:16px;color:var(--text);text-decoration:none;font-weight:500;border-bottom:1px solid var(--border);}
 .nav-mobile-menu a:last-child{border-bottom:none;}
-@media(max-width:900px){.nav{justify-content:space-between!important;}.nav-logo-link{margin-right:auto;}.nav-links{display:none!important;}.nav-hamburger{display:flex!important;}}
+/* FIX 3: Footer logo left alignment on mobile */
+    @media(max-width:900px){
+        .footer-top > div:first-child img,
+        .footer-top > div:first-child .footer-tagline{
+      padding-left:0 !important;
+              margin-left:0 !important;
+        }
+    }
+    @media(max-width:900px){.nav{justify-content:space-between!important;}.nav-logo-link{margin-right:auto;}.nav-links{display:none!important;}.nav-hamburger{display:flex!important;}}
 .nav-mobile-menu a.active{border-left:3px solid var(--orange-acc);padding-left:21px;color:var(--text) !important;}
 </style>
 </head>
