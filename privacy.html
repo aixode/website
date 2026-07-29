@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Consent Mode defaults (must load before GTM) -->
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', {
-  'analytics_storage': 'denied',
-  'ad_storage': 'denied',
-  'ad_user_data': 'denied',
-  'ad_personalization': 'denied'
-});
-</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -686,52 +676,6 @@ window.addEventListener('scroll', () => {
 </script>
 <script>(function(){var b=document.getElementById('navHamburger');var m=document.getElementById('navMobileMenu');if(b&&m){b.addEventListener('click',function(){b.classList.toggle('active');m.classList.toggle('open');});m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('active');m.classList.remove('open');});});}})();</script>
 <script>(function(){var path=window.location.pathname.replace(/\/$/,'')||'/';document.querySelectorAll('.nav-mobile-menu a').forEach(function(a){var href=a.getAttribute('href').replace(/\/$/,'')||'/';if(href===path)a.classList.add('active');});})();</script>
-<!-- Cookie consent banner -->
-<div id="aixode-consent-banner" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:2000;background:#111318;border-top:1px solid rgba(255,255,255,0.1);padding:20px 24px;box-shadow:0 -4px 24px rgba(0,0,0,0.4);">
-  <div style="max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-    <p style="flex:1;min-width:240px;margin:0;color:rgba(255,255,255,0.75);font-size:14px;font-family:'Roboto',sans-serif;line-height:1.6;">
-      We use cookies to understand how visitors use Aixode. You can accept or reject non-essential cookies. See our <a href="/privacy" style="color:#FF6B2B;text-decoration:none;">Privacy Policy</a>.
-    </p>
-    <div style="display:flex;gap:10px;flex-shrink:0;">
-      <button id="aixode-consent-reject" style="background:transparent;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.15);padding:10px 20px;border-radius:10px;font-size:14px;font-family:'Roboto',sans-serif;cursor:pointer;">Reject</button>
-      <button id="aixode-consent-accept" style="background:#FF6B2B;color:#000;border:none;padding:10px 20px;border-radius:10px;font-size:14px;font-weight:700;font-family:'Roboto',sans-serif;cursor:pointer;">Accept</button>
-    </div>
-  </div>
-</div>
-<script>
-(function(){
-  function setConsent(granted){
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'update', {
-      'analytics_storage': granted ? 'granted' : 'denied',
-      'ad_storage': granted ? 'granted' : 'denied',
-      'ad_user_data': granted ? 'granted' : 'denied',
-      'ad_personalization': granted ? 'granted' : 'denied'
-    });
-  }
-  var stored = localStorage.getItem('aixode_consent');
-  var banner = document.getElementById('aixode-consent-banner');
-  if(stored === 'granted'){
-    setConsent(true);
-  } else if(stored === 'denied'){
-    setConsent(false);
-  } else if(banner){
-    banner.style.display = 'block';
-  }
-  var acceptBtn = document.getElementById('aixode-consent-accept');
-  var rejectBtn = document.getElementById('aixode-consent-reject');
-  if(acceptBtn) acceptBtn.addEventListener('click', function(){
-    localStorage.setItem('aixode_consent', 'granted');
-    setConsent(true);
-    if(banner) banner.style.display = 'none';
-  });
-  if(rejectBtn) rejectBtn.addEventListener('click', function(){
-    localStorage.setItem('aixode_consent', 'denied');
-    setConsent(false);
-    if(banner) banner.style.display = 'none';
-  });
-})();
-</script>
+
 </body>
 </html>
